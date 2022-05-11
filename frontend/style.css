@@ -8,6 +8,7 @@
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 100;
   width: 60px;
   height: 60px;
   background-color: black;
@@ -52,5 +53,47 @@
   top: 28px;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+#root.menu-opened nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  width: 300px;
+  height: 100vh;
+  padding: 40px;
+  background-color: black;
+  color: white;
+  -webkit-transition: right 500ms, -webkit-transform 500ms;
+  transition: right 500ms, -webkit-transform 500ms;
+  transition: right 500ms, transform 500ms;
+  transition: right 500ms, transform 500ms, -webkit-transform 500ms;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  z-index: 99;
+  width: 300px;
+  height: 100vh;
+  padding: 40px;
+  background-color: black;
+  color: white;
+  -webkit-transition: right 500ms, -webkit-transform 500ms;
+  transition: right 500ms, -webkit-transform 500ms;
+  transition: right 500ms, transform 500ms;
+  transition: right 500ms, transform 500ms, -webkit-transform 500ms;
+}
+
+nav a {
+  display: block;
+  margin-bottom: 20px;
 }
 /*# sourceMappingURL=style.css.map */

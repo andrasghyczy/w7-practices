@@ -1,4 +1,4 @@
-let globalVariable1 = 12;
+/* let globalVariable1 = 12;
 
 let globalVariable2 = function (){
     console.log("inside the function", globalVariable1); // mivel globális változó, függvényen belül is előhívható
@@ -73,15 +73,26 @@ globalVariable3(globalVariable5(),globalVariable4, globalVariable6)
 
 /* console.log(funVariable) // nem fog tudni hozzáférni, mert a "funVariable" function változó, csak a functionon belül létezik */
 
-const loadEvent = function (parameter1){
-    const rootElement = document.getElementById("root")
-    console.log(globalVariable1)
-    console.log(parameter1)
+const menuButtonComponent = function (){
+    return`
+        <button id="menu-btn"></button>
+    `
+}
 
-    rootElement.addEventListener("click", function (event){
-        console.log(event.currentTarget);
-        event.currentTarget.insertAdjacentHTML("beforeend", "Clicked, ")
-        event.currentTarget.classList.toggle("clicked")
+const loadEvent = function (){
+    const rootElement = document.getElementById("root");
+    rootElement.insertAdjacentHTML("beforeend", menuButtonComponent());
+
+    const menuButtonElement = document.getElementById("menu-btn");
+    
+
+    menuButtonElement.addEventListener("click", function (event){
+        // event.currentTarget.classList.toggle("clicked")
+        // console.log(rootElement);
+        // console.log(event.currentTarget.parentElement);
+        // console.log(event.currentTarget.closest("#root"));
+
+        event.currentTarget.closest("#root").classList.toggle("menu-opened")
     })
 }
 
